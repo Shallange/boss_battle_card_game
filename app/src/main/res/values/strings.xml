@@ -3,4 +3,10 @@
     <string name="btn_start_game">Start Game</string>
     <string name="title_boss_battle_card_game">Boss Battle Card Game</string>
     <string name="btn_settings">Settings</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="choose_build">Choose build</string>
+    <string name="build_heal_text">Heal</string>
+    <string name="build_balanced_text">Balanced</string>
+    <string name="build_defensive_text">Defensive</string>
+    <string name="build_damage_text">Damage</string>
 </resources>
