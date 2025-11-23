@@ -1,6 +1,8 @@
 package com.example.bossbattlecardgame
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class MainMenuActivity : AppCompatActivity() {
@@ -8,6 +10,11 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main_menu)
+        val btnSettings = findViewById<Button>(R.id.btnBuildSelection)
 
+        btnSettings.setOnClickListener{
+        val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
