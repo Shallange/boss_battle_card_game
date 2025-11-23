@@ -2,8 +2,10 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="true">
+
         <shape android:shape="rectangle">
             <solid android:color="@color/btn_green"/>
+            <corners android:radius="8dp"/>
             <padding
                 android:top="12dp"
                 android:bottom="12dp"
@@ -15,6 +17,7 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@color/bg_builds"/>
+            <corners android:radius="8dp"/>
             <padding
                 android:top="12dp"
                 android:bottom="12dp"
