@@ -9,4 +9,6 @@
     <string name="build_balanced_text">Balanced</string>
     <string name="build_defensive_text">Defensive</string>
     <string name="build_damage_text">Damage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

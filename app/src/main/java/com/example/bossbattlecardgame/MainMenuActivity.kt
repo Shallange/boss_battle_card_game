@@ -11,7 +11,12 @@ class MainMenuActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main_menu)
         val btnSettings = findViewById<Button>(R.id.btnBuildSelection)
+        val btnStartGame = findViewById<Button>(R.id.btnStartGame)
 
+        btnStartGame.setOnClickListener {
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
         btnSettings.setOnClickListener{
         val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)

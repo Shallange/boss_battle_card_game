@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="hp_red">#FF4A4A</color>
+    <color name="hp_red_darker">#870404</color>
+
     <color name="hp_green">#7FFF00</color>
 
     <color name="btn_green">#7FFF00</color>
