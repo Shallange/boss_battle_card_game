@@ -1,8 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BossFragment">
+    tools:context=".BossFragment"
+    tools:background="@color/bg_dark">
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textBossName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BossNameStyle"/>
+
+    <View
+        android:id="@+id/viewBossHp"
+        android:layout_width="341dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/boss_hp_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBossName" />
+
+    <View
+        android:id="@+id/viewBossHpFill"
+        android:layout_width="300dp"
+        android:layout_height="36dp"
+        android:background="@color/hp_red"
+        app:layout_constraintTop_toTopOf="@+id/viewBossHp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewBossHp"
+        app:layout_constraintStart_toStartOf="@+id/viewBossHp"/>
+
+    <ImageView
+        android:id="@+id/imgBoss"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:background="@color/bg_boss_grey"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewBossHp"
+        app:layout_constraintVertical_bias="0.054" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
