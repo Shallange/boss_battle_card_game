@@ -9,13 +9,18 @@ class BossManager {
 
     private fun initData() {
         bosses.add(
-            Boss("Infernal Dread knight",340,R.drawable.infernaldreadknight)
+            Boss(1,"Infernal Dread knight",340,R.drawable.infernaldreadknight)
         )
         bosses.add(
-            Boss("Emberlord Malakar",340,R.drawable.emberlordmalakar),
+            Boss(2,"Emberlord Malakar",340,R.drawable.emberlordmalakar),
         )
         bosses.add(
-            Boss("Shadow Ignaroth",340, R.drawable.shadowignaroth)
+            Boss(3,"Shadow Ignaroth",340, R.drawable.shadowignaroth)
         )
     }
+
+    fun getBoss(id: Int): Boss? {
+        return bosses.find { it.id == id }
+    }
+
 }
