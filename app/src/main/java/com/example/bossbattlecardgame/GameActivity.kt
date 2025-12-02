@@ -16,7 +16,12 @@ class GameActivity : AppCompatActivity() {
         viewModel.loadBoss(1)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, BossFragment())
+            .replace(R.id.bossFragmentContainer, BossFragment())
+            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.playerFragmentContainer, PlayerFragment())
             .commit()
     }
+
 }
