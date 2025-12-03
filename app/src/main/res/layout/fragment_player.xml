@@ -24,7 +24,7 @@
 
     <View
         android:id="@+id/viewPlayerHp"
-        android:layout_width="341dp"
+        android:layout_width="340dp"
         android:layout_height="36dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/hp_bar_background"
@@ -36,7 +36,7 @@
 
     <View
         android:id="@+id/viewPlayerHpFill"
-        android:layout_width="300dp"
+        android:layout_width="340dp"
         android:layout_height="36dp"
         android:background="@color/hp_green"
         app:layout_constraintBottom_toBottomOf="@+id/viewPlayerHp"

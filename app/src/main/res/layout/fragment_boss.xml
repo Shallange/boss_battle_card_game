@@ -19,7 +19,7 @@
 
     <View
         android:id="@+id/viewBossHp"
-        android:layout_width="341dp"
+        android:layout_width="340dp"
         android:layout_height="36dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/hp_bar_background"
@@ -29,7 +29,7 @@
 
     <View
         android:id="@+id/viewBossHpFill"
-        android:layout_width="300dp"
+        android:layout_width="340dp"
         android:layout_height="36dp"
         android:background="@color/hp_red"
         app:layout_constraintTop_toTopOf="@+id/viewBossHp"
