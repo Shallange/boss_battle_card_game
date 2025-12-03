@@ -14,4 +14,14 @@ class GameViewModel : ViewModel() {
         val boss = bossManager.getBoss(id) ?: return
         _currentBoss.value = boss
     }
+    fun attackBoss(){
+
+    }
+    fun heal(){
+
+    }
+    fun shield(){
+
+    }
+
 }
