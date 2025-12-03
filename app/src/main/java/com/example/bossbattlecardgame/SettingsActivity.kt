@@ -1,17 +1,21 @@
 package com.example.bossbattlecardgame
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.bossbattlecardgame.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity(){
+
+    private lateinit var binding: ActivitySettingsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
 
-        val btnMainMenu = findViewById<Button>(R.id.btnBackToMainMenu)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnMainMenu.setOnClickListener {
+        binding.btnBackToMainMenu.setOnClickListener {
             finish()
         }
     }
