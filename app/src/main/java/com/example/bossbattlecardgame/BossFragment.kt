@@ -10,17 +10,32 @@ import androidx.lifecycle.ViewModelProvider
 class BossFragment : Fragment(R.layout.fragment_boss) {
 
     private lateinit var viewModel: GameViewModel
+    private lateinit var  nameView: TextView
+    private lateinit var  imageView: ImageView
+    private lateinit var  hpFill: View
+    private lateinit var  hpBar: View
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[GameViewModel::class.java]
 
-        val nameView = view.findViewById<TextView>(R.id.textBossName)
-        val imageView = view.findViewById<ImageView>(R.id.imgBoss)
+        nameView = view.findViewById(R.id.textBossName)
+        imageView = view.findViewById(R.id.imgBoss)
+        hpFill = view.findViewById(R.id.viewBossHpFill)
+        hpBar = view.findViewById(R.id.viewBossHp)
 
         viewModel.currentBoss.observe(viewLifecycleOwner) { boss ->
             nameView.text = boss.name
             imageView.setImageResource(boss.imageResId)
+            updateHpBar(boss)
+        }
+    }
+    private fun updateHpBar(boss: Boss) {
+        hpBar.post {
+            val fullWidth = hpBar.width
+            val progress = boss.currentHp.toFloat() / boss.maxHp
+            hpFill.layoutParams.width = (fullWidth * progress).toInt()
+            hpFill.requestLayout()
         }
     }
 

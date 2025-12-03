@@ -15,7 +15,9 @@ class GameViewModel : ViewModel() {
         _currentBoss.value = boss
     }
     fun attackBoss(){
-
+        val boss = _currentBoss.value ?: return // fetch boss live data
+        boss.currentHp = (boss.currentHp - 20).coerceAtLeast(0)// if result = less than 0 count as 0
+        _currentBoss.value = boss
     }
     fun heal(){
 
