@@ -18,5 +18,21 @@ class SettingsActivity : AppCompatActivity(){
         binding.btnBackToMainMenu.setOnClickListener {
             finish()
         }
+        val prefs = getSharedPreferences("game_prefs", MODE_PRIVATE)
+
+        binding.radioDamage.setOnClickListener {
+            prefs.edit().putString("player_build", PlayerBuild.DAMAGE.name).apply()
+        }
+        binding.radioDefensive.setOnClickListener {
+            prefs.edit().putString("player_build", PlayerBuild.DEFENSIVE.name).apply()
+        }
+        binding.radioBalanced.setOnClickListener {
+            prefs.edit().putString("player_build", PlayerBuild.BALANCED.name).apply()
+        }
+        binding.radioHeal.setOnClickListener {
+            prefs.edit().putString("player_build", PlayerBuild.HEALER.name).apply()
+        }
+
+
     }
 }
