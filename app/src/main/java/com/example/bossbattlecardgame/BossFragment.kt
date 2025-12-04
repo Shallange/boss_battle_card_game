@@ -30,6 +30,7 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
             updateHpBar(boss)
         }
     }
+
     private fun updateHpBar(boss: Boss) {
         hpBar.post {
             val fullWidth = hpBar.width
@@ -38,5 +39,4 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
             hpFill.requestLayout()
         }
     }
-
 }
