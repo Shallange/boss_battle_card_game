@@ -2,6 +2,7 @@ package com.example.bossbattlecardgame
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.bossbattlecardgame.databinding.ActivityGameBinding
@@ -31,5 +32,30 @@ class GameActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(binding.playerFragmentContainer.id, PlayerFragment())
             .commit()
+
+        viewModel.bossDefeatedEvent.observe(this) { defeated ->
+            if (defeated) {
+                showBossDefeatedOverlay()
+            }
+        }
     }
+
+    private fun showBossDefeatedOverlay() {
+        binding.overlayBossDefeated.visibility = View.VISIBLE
+        binding.textBossDefeated.visibility = View.VISIBLE
+        binding.btnNextBoss.visibility = View.VISIBLE
+
+        binding.btnNextBoss.setOnClickListener {
+            hideOverlay()
+            viewModel.resetBossDefeatedEvent()
+            viewModel.loadNextBoss()
+        }
+    }
+
+    private fun hideOverlay() {
+        binding.overlayBossDefeated.visibility = View.GONE
+        binding.textBossDefeated.visibility = View.GONE
+        binding.btnNextBoss.visibility = View.GONE
+    }
+
 }
