@@ -46,6 +46,23 @@ class GameViewModel : ViewModel() {
         }
     }
 
+    fun bossAttack(){
+        val boss = _currentBoss.value ?: return
+        val player = _player.value ?: return
+        val shieldVal = playerManager.shieldValue(player.build)
+
+        var damageTaken = boss.damage
+
+        if (player.isShielding){
+            damageTaken -= shieldVal
+            player.isShielding = false
+        }
+        damageTaken = damageTaken.coerceAtLeast(0)
+
+        player.currentHp = (player.currentHp - damageTaken).coerceAtLeast(0)
+        _player.value = player
+    }
+
     fun attackBoss(){
         val boss = _currentBoss.value ?: return // fetch boss live data
         val player = _player.value ?: return
@@ -63,6 +80,7 @@ class GameViewModel : ViewModel() {
         val heal = playerManager.healAmount(player.build)
         player.currentHp = (player.currentHp + heal).coerceAtMost(player.maxHp)
         _player.value = player
+
     }
 
     fun shield(){
