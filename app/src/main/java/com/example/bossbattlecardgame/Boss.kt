@@ -5,5 +5,6 @@ data class Boss(
     val name: String,
     var currentHp: Int,
     val maxHp: Int,
+    val damage: Int,
     val imageResId: Int
 )
