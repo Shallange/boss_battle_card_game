@@ -48,7 +48,8 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
         hpBar.post {
             val fullWidth = hpBar.width
             val progress = player.currentHp.toFloat() / player.maxHp
-            hpFill.layoutParams.width = (fullWidth * progress).toInt()
+            val minWidthPx = (1 * resources.displayMetrics.density).toInt()
+            hpFill.layoutParams.width = (fullWidth * progress).toInt().coerceAtLeast(minWidthPx)
             hpFill.requestLayout()
         }
     }
