@@ -35,7 +35,9 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
         hpBar.post {
             val fullWidth = hpBar.width
             val progress = boss.currentHp.toFloat() / boss.maxHp
-            hpFill.layoutParams.width = (fullWidth * progress).toInt()
+            val minWidthPx = (1 * resources.displayMetrics.density).toInt()
+
+            hpFill.layoutParams.width = (fullWidth * progress).toInt().coerceAtLeast(minWidthPx)
             hpFill.requestLayout()
         }
     }
