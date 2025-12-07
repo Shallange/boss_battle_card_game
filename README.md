@@ -7,3 +7,7 @@ When the player defeats a boss, the next boss appears.
 > [Figma Design](https://www.figma.com/design/kYpqZ1X33IbRZjjsQThICT/Boss-Battle-Card-Game?node-id=0-1&t=Pp0OpJj1xLJOeqtW-1)
 >
 > ![App Sketch](/Readme_img/sketchfigma.png)
+> 
+> ## 📌 Gameplay Preview
+
+<img alt="gameplayDemo" src="docs/demo.gif" width="300" />
