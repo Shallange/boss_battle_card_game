@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
+
+
 class BossFragment : Fragment(R.layout.fragment_boss) {
 
     private lateinit var viewModel: GameViewModel
@@ -14,6 +16,7 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
     private lateinit var  imageView: ImageView
     private lateinit var  hpFill: View
     private lateinit var  hpBar: View
+    private lateinit var  bossHpValue: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,6 +26,7 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
         imageView = view.findViewById(R.id.imgBoss)
         hpFill = view.findViewById(R.id.viewBossHpFill)
         hpBar = view.findViewById(R.id.viewBossHp)
+        bossHpValue = view.findViewById(R.id.textBossHpValue)
 
         viewModel.currentBoss.observe(viewLifecycleOwner) { boss ->
             nameView.text = boss.name
@@ -38,7 +42,10 @@ class BossFragment : Fragment(R.layout.fragment_boss) {
             val minWidthPx = (1 * resources.displayMetrics.density).toInt()
 
             hpFill.layoutParams.width = (fullWidth * progress).toInt().coerceAtLeast(minWidthPx)
+            bossHpValue.text = "${boss.currentHp}/${boss.maxHp}"
+
             hpFill.requestLayout()
+
         }
     }
 }

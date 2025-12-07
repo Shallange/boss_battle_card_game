@@ -13,6 +13,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
     private lateinit var  buildNameView: TextView
     private lateinit var  hpFill: View
     private lateinit var  hpBar: View
+    private lateinit var  playerHpValue: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,6 +22,8 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
         buildNameView = view.findViewById(R.id.textPlayerBuild)
         hpFill = view.findViewById(R.id.viewPlayerHpFill)
         hpBar = view.findViewById(R.id.viewPlayerHp)
+        playerHpValue = view.findViewById(R.id.textPlayerHpValue)
+
 
         val attackBtn = view.findViewById<Button>(R.id.playerAttack)
         val shieldBtn = view.findViewById<Button>(R.id.playerShield)
@@ -50,6 +53,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
             val progress = player.currentHp.toFloat() / player.maxHp
             val minWidthPx = (1 * resources.displayMetrics.density).toInt()
             hpFill.layoutParams.width = (fullWidth * progress).toInt().coerceAtLeast(minWidthPx)
+            playerHpValue.text = "${player.currentHp}/${player.maxHp}"
             hpFill.requestLayout()
         }
     }

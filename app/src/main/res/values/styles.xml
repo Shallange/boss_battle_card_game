@@ -60,5 +60,12 @@
         <item name="layout_constraintRight_toRightOf">parent</item>
     </style>
 
+    <style name="HpValueText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/iceberg</item>
+    </style>
+
+
 </resources>
 
