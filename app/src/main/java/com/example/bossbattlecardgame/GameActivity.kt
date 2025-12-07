@@ -44,6 +44,12 @@ class GameActivity : AppCompatActivity() {
                 showPlayerDefeatedOverlay()
             }
         }
+        viewModel.gameCompletedEvent.observe(this) { done ->
+            if (done) {
+                showGameCompletedOverlay()
+            }
+        }
+
     }
 
     private fun showBossDefeatedOverlay() {
@@ -82,4 +88,16 @@ class GameActivity : AppCompatActivity() {
         binding.textPlayerDefeated.visibility = View.GONE
         binding.btnTryAgain.visibility = View.GONE
     }
+
+    private fun showGameCompletedOverlay() {
+        binding.overlayGameWon.visibility = View.VISIBLE
+        binding.textGameWon.visibility = View.VISIBLE
+        binding.btnWonGame.visibility = View.VISIBLE
+
+        binding.btnWonGame.setOnClickListener {
+            startActivity(Intent(this, MainMenuActivity::class.java))
+            finish()
+        }
+    }
+
 }
