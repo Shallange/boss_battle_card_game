@@ -12,12 +12,15 @@ class GameViewModel : ViewModel() {
     private val _bossDefeatedEvent = MutableLiveData<Boolean>()
     private val _playerDefeatedEvent = MutableLiveData<Boolean>()
     private val _player = MutableLiveData<Player>()
+    private val _gameCompletedEvent = MutableLiveData<Boolean>()
 
     val currentBoss: LiveData<Boss> = _currentBoss
     val player: LiveData<Player> = _player
 
     val bossDefeatedEvent: LiveData<Boolean> = _bossDefeatedEvent
     val playerDefeatedEvent: LiveData<Boolean> = _playerDefeatedEvent
+    val gameCompletedEvent: LiveData<Boolean> = _gameCompletedEvent
+
 
     private var currentBossIndex = 1
     private var isPlayerTurn = true
@@ -49,7 +52,7 @@ class GameViewModel : ViewModel() {
         if (nextBoss != null) {
             _currentBoss.value = nextBoss
         } else {
-            println("game won")
+            _gameCompletedEvent.value = true
         }
     }
 

@@ -20,7 +20,7 @@ class PlayerManager {
 
     fun attackDamage(build: PlayerBuild): Int {
         return when (build) {
-            PlayerBuild.DAMAGE -> 40
+            PlayerBuild.DAMAGE -> 45
             PlayerBuild.DEFENSIVE -> 15
             PlayerBuild.BALANCED -> 25
             PlayerBuild.HEALER -> 10

@@ -44,6 +44,16 @@
         app:layout_constraintTop_toTopOf="@+id/viewPlayerHp"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textPlayerHpValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        style="@style/HpValueText"
+        app:layout_constraintTop_toBottomOf="@id/viewPlayerHp"
+        app:layout_constraintStart_toStartOf="@id/viewPlayerHp"
+        app:layout_constraintEnd_toEndOf="@id/viewPlayerHp"/>
+
     <Button
         android:id="@+id/playerAttack"
         style="@style/PlayerCards"
