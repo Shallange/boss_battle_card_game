@@ -8,6 +8,7 @@ When the player defeats a boss, the next boss appears.
 >
 > ![App Sketch](/Readme_img/sketchfigma.png)
 > 
-> ## 📌 Gameplay Preview
-
+> ## Gameplay Preview 
+<p style="text-align:center;">
 <img alt="gameplayDemo" src="docs/demo.gif" width="300" />
+</p>
