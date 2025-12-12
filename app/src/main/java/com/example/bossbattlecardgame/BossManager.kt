@@ -9,13 +9,13 @@ class BossManager {
 
     private fun initData() {
         bosses.add(
-            Boss(1,"Infernal knight",400,400,12,R.drawable.infernaldreadknight)
+            Boss(1,"Infernal knight",420,420,14,R.drawable.infernaldreadknight)
         )
         bosses.add(
-            Boss(2,"Emberlord Malakar",600,600,18,R.drawable.emberlordmalakar),
+            Boss(2,"Emberlord Malakar",650,650,22,R.drawable.emberlordmalakar),
         )
         bosses.add(
-            Boss(3,"Shadow Ignaroth",900, 900,25,R.drawable.shadowignaroth)
+            Boss(3,"Shadow Ignaroth",900, 900,30,R.drawable.shadowignaroth)
         )
     }
 
