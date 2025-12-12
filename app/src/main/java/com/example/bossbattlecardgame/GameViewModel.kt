@@ -24,6 +24,7 @@ class GameViewModel : ViewModel() {
 
     private var currentBossIndex = 1
     private var isPlayerTurn = true
+    var shieldTurnLeft = 0
 
     fun startGame(build: PlayerBuild) {
         val player = playerManager.createPlayer(build)
@@ -67,7 +68,11 @@ class GameViewModel : ViewModel() {
 
         if (player.isShielding){
             damageTaken -= shieldVal
-            player.isShielding = false
+            shieldTurnLeft--
+
+            if (shieldTurnLeft == 0) {
+                player.isShielding = false
+            }
         }
         damageTaken = damageTaken.coerceAtLeast(0)
 
@@ -114,6 +119,7 @@ class GameViewModel : ViewModel() {
         if (!isPlayerTurn) return
 
         player.isShielding = true
+        shieldTurnLeft = 2
         _player.value = player
         isPlayerTurn = false
         bossAttack()

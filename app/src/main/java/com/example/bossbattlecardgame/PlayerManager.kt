@@ -38,7 +38,7 @@ class PlayerManager {
 
     fun shieldValue(build: PlayerBuild): Int {
         return when (build) {
-            PlayerBuild.DAMAGE -> 15
+            PlayerBuild.DAMAGE -> 14
             PlayerBuild.DEFENSIVE -> 45
             PlayerBuild.BALANCED -> 30
             PlayerBuild.HEALER -> 20
